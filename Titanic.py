@@ -30,9 +30,8 @@ df['embarked'].nunique()
 town=df['embarked'].value_counts()
 print(town)
 
-new_town=df['embarked'].fillna('S',inplace=True)
-new_town=df['embarked'].isnull().sum()
-print(new_town)
+df['embarked'] = df['embarked'].fillna('S')
+df['embarked']
 
 new_name=df.rename(columns={'sex':'gender'},inplace=True)
 print(new_name)
