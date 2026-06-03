@@ -1,6 +1,8 @@
 # NumPy is a powerful library in Python for numerical computing.
 # It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.
-# Here are some key features and functionalities of NumPy:
+# Here are some common operations and functionalities of NumPy.
+# These include array creation, manipulation, mathematical operations, linear algebra, and handling missing values.
+# These questions are beginner-friendly and cover a range of topics to help you understand the basics of NumPy much better.
 
 
 
@@ -98,9 +100,18 @@ print(replace)
 df_ward=df.copy()
 fill=df_ward.ffill()
 print(fill)
+
 #replace missing values using backward fill method.
 df_back=df.copy()
+df_back.bfill()
+print(df_back)
+
 # fill the values with median
+df_median=df.copy()
+df_median['age'].fillna(df_median['age'].median(),inplace=True)
+df_median['marks'].fillna(df_median['marks'].median(),inplace=True)
+print(df_median)    
+
 #create a visualisation heatmap 
 import seaborn as sns
 map=sns.heatmap(df.isnull(),cmap="viridis")
